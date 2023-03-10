@@ -23,25 +23,29 @@ int[,] SquareMatrixSpiralFill(int Size)
 
         for (int j = k; j < N - k; j++)//заполнение верхней стороны
         {
-            LastNumber = LastNumber + 1;
-            ResultMatrix[k, j] = LastNumber - 1;            
+            
+            ResultMatrix[k, j] = LastNumber;
+            LastNumber = LastNumber + 1;            
         }
         for (int i = 1 + k; i < (N - 1) - k; i++)// заполнение правой стороны
         {
-            LastNumber = LastNumber + 1;
-            ResultMatrix[i, (N - 1) - k] = LastNumber - 1;
+           
+            ResultMatrix[i, (N - 1) - k] = LastNumber;
+             LastNumber = LastNumber + 1;
             
         }
         for (int j = (N - 1) - k; j > k; j--)// заполнение нижней стороны
         {
+            
+            ResultMatrix[(N - 1) - k, j] = LastNumber;
             LastNumber = LastNumber + 1;
-            ResultMatrix[(N - 1) - k, j] = LastNumber - 1;
 
         }
         for (int i = (N - 1) - k; i > k; i--)//заполнение левой стороны
         {
+            
+            ResultMatrix[i, k] = LastNumber;
             LastNumber = LastNumber + 1;
-            ResultMatrix[i, k] = LastNumber - 1;
         }
 
     }
